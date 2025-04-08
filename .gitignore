@@ -1,17 +1,13 @@
-# Node modules
-**/node_modules/
+# Ignore node_modules for both frontend and backend
+ws-todo-frontend/node_modules/
+ws-todo-backend/node_modules/
 
-# Logs
-*.log
+# Ignore build files (if any)
+ws-todo-frontend/dist/
+ws-todo-backend/dist/
 
-# Vite build output
-**/dist/
+# Ignore environment files
+*.env
 
-# OS/system files
+# Mac system files
 .DS_Store
-
-# Environment variables
-**/.env
-
-# VS Code settings (optional)
-.vscode/
