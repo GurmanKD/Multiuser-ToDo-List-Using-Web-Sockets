@@ -3,6 +3,8 @@ import { connectWebSocket, sendMessage } from './websocket';
 import TodoList from './components/TodoList';
 import MotivationBoard from './components/MotivationBoard';
 
+import { Container, Typography, Box, Divider } from '@mui/material';
+
 function App() {
   const [userId, setUserId] = useState(null);
   const [todos, setTodos] = useState({});
@@ -31,11 +33,21 @@ function App() {
   };
 
   return (
-    <div style={{ padding: 20 }}>
-      <h1>🧠 Multi-User Todo List</h1>
-      <TodoList userId={userId} todos={todos} addTodo={addTodo} />
-      <MotivationBoard messages={messages} sendMotivation={sendMotivation} />
-    </div>
+    <Container maxWidth='md' sx={{ py: 4 }}>
+      <Typography variant='h3' gutterBottom textAlign='center'>
+        🧠 Multi-User Todo List
+      </Typography>
+
+      <Box my={4}>
+        <TodoList userId={userId} todos={todos} addTodo={addTodo} />
+      </Box>
+
+      <Divider sx={{ my: 4 }} />
+
+      <Box my={4}>
+        <MotivationBoard messages={messages} sendMotivation={sendMotivation} />
+      </Box>
+    </Container>
   );
 }
 
